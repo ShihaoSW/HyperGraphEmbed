@@ -6,7 +6,7 @@ To reporduce the results in [A general latent embedding approach for modeling no
 
 **Author embedding plot from the co-citation hypergraph**:
 <p align="center">
-<img src="author_embed.pdf" alt="drawing" width="500"/>
+<img src="author_embed.png" alt="drawing" width="500"/>
 </p>
 
 **Reference**:
