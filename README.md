@@ -9,5 +9,4 @@ To reporduce the results in [A general latent embedding approach for modeling no
 <img src="author_embed.png" alt="drawing" width="500"/>
 </p>
 
-**Reference**:
 
