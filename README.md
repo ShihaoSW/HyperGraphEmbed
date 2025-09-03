@@ -9,4 +9,5 @@ To reporduce the results in [A general latent embedding approach for modeling no
 <img src="[author_embed.png](https://raw.githubusercontent.com/ShihaoSW/HyperGraphEmbed/main/author_embed.png)" alt="drawing" width="600"/>
 </p>
 
+![Author embedding plot](https://raw.githubusercontent.com/ShihaoSW/HyperGraphEmbed/main/author_embed.png)
 
