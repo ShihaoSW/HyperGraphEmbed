@@ -1,12 +1,8 @@
 ## Data Resource
 
-The MADStat dataset is available at [ZhengTracyKe/MADStat](https://github.com/ZhengTracyKe/MADStat).  
-If you use this data, please reference the repository and the paper:  
-**"Co-citation and Co-authorship Networks of Statisticians"**  
-([Journal of Business & Economic Statistics](https://www.tandfonline.com/doi/full/10.1080/07350015.2021.1978469)).  
+The MADStat dataset is available at [ZhengTracyKe/MADStat](https://github.com/ZhengTracyKe/MADStat). If you use this data, please reference the repository and the paper: **"Co-citation and Co-authorship Networks of Statisticians"**([Journal of Business & Economic Statistics](https://www.tandfonline.com/doi/full/10.1080/07350015.2021.1978469)).  
 
-In this repository, we make use of only a subset of the data from MADStat.  
-For full details of the data, please see the [MADStat repository](https://github.com/ZhengTracyKe/MADStat).  
+In this repository, we make use of only a subset of the data from MADStat. For full details of the data, please see the [MADStat repository](https://github.com/ZhengTracyKe/MADStat).  
 
 ---
 
