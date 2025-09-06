@@ -1,6 +1,6 @@
 ## Embedding General Sparse Hypergraphs with Non-uniformity and Multiplicity
 
-Codes in the repo reporduce the results in [A general latent embedding approach for modeling non-uniform high-dimensional sparse hypergraphs with multiplicity.](https://arxiv.org/abs/2410.12108) using R. 
+Codes in the repo reporduce the results in [A general latent embedding approach for modeling non-uniform high-dimensional sparse hypergraphs with multiplicity](https://arxiv.org/abs/2410.12108) using R. 
 
 **Folders and files**:
 - **`cocitation_network/`**  
