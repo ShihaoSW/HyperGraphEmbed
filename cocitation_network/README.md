@@ -9,16 +9,16 @@ In this repository, we make use of only a subset of the data from MADStat. For f
 ## Repository Files
 
 - **`AuPapMat.csv`**  
-  Author–paper incidence matrix summarizing the BibTeX data.  
+  Matrix summarizing the BibTeX data.  
 
 - **`AuthorPaperInfo.RData`**  
-  R data object containing metadata on authors and papers.  
+  R data object containing information of authors and papers.  
 
 - **`BibtexInfo.RData`**  
   R data object with bibliographic information.  
 
 - **`PapPapMat.csv`**  
-  Paper–paper incidence matrix summarizing the citation data.  
+  Matrix summarizing the citation data.  
 
 - **`author_name.txt`**  
   Text file listing author names.  
