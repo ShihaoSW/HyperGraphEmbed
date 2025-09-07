@@ -10,7 +10,10 @@ Codes in the repo reporduce the results in [A general latent embedding approach 
   An R package implementing hypergraph embedding with Rcpp.  
 
 - **`coverage_result.R`**  
-  Code to reproduce the inference results reported in the paper.  
+  Code to reproduce the inference results reported in the paper.
+
+- **`evaluate_coverage.R`**  
+  Code to plot the inference results reported in the paper. 
 
 - **`functions_limit.R`**  
   Utility functions used in `coverage_result.R`.
