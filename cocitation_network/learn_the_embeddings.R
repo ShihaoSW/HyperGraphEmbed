@@ -121,7 +121,7 @@ dim(hypergraph)
 save(hypergraph, file = "hg1991-2000_3000.RData" )
 
 ######################################################
-########## construct the hypergraph network ##########
+############### learn the embeddings #################
 ######################################################
 
 library(RSpectra)
