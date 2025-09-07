@@ -2,6 +2,9 @@
 ########## construct the hypergraph network ##########
 ######################################################
 
+# The code below includes some exploratory and experimental sections (commented out).
+# To generate the figures in the paper, run only the uncommented sections.
+
 rm(list = ls())
 load("BibtexInfo.RData")
 load("AuthorPaperInfo.RData")
