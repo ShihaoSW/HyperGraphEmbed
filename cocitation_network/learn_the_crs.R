@@ -175,8 +175,8 @@ library("deldir")
 ############# plot the high-degree authors###############
 # plotdata.centers <- data.frame(R1=x1, R2=x2)
 # selectAuthors = embeddings$names[embeddings$selected_authors]
-# label_point = selected_author_label
-# L <- length(selected_author_label)
+label_point = selected_author_label
+L <- length(selected_author_label)
 
 p1 <- ggplot()+  geom_ellipse(aes(x0 = x1_list, y0 = x2_list, a = a_list, b = b_list, angle =angle_list),
                               color = 'red4', lty = 2) + theme_bw() +
