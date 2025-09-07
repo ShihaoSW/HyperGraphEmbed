@@ -1,13 +1,13 @@
 #################################################
 ##### high-dimensional hypergraph embedding #####
-################ Simulation######################
+############### Simulation ######################
 
 source("functions_limit.R")
 
 ###### set seed ########
 ## The following commented codes are for Monte Carlo repetitions
 ## To reproduce results in the paper, set seeds to be (1,2,...,1000)
-## seed <- as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID")) # This line sets seed using the task ID on the cluster
+## seed <- as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID")) # This line sets seed using the task ID on the Michigan Great Lakes cluster
 set.seed(seed)
 
 ##### All coverage results #####
