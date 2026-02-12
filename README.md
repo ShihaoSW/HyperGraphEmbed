@@ -24,7 +24,7 @@ Code in this repository reproduces the results in
   Code to plot the simulation inference results reported in Figures 4 and 5 of the paper. 
 
 - **`functions_limit.R`**  
-  Utility functions used in `coverage_result.R`.
+  Utility functions used in the analysis.
 
 **Reproducibility guide**:
 
