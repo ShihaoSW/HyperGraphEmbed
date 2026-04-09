@@ -1,4 +1,4 @@
-## Repository Files
+## Files for Reproducing the simulation results
 
 - **`Theta_result.R`**  
   Code to reproduce the simulation results in Figures 2 and 3 of the paper.
