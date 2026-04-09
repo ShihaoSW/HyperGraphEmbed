@@ -178,93 +178,9 @@ F_est = result$F_hat
 Z_est = result$Z_hat
 alpha_est = result$alpha_hat
 
-#### keep updating if needed ####
-#### F0 = F_est
-#### Z0 = Z_est            
-#### alpha0 = alpha_est         
-#### result = am_pga(V, F0, Z0, alpha0, nT = 10000)
-#### F_est = result$F_hat
-#### Z_est = result$Z_hat
-#### alpha_est = result$alpha_hat
-
 final_embeddings = list()
 final_embeddings$F_em = F_est
 final_embeddings$Z_em = Z_est
 final_embeddings$alpha = alpha_est
 
 save(final_embeddings, file = "hg1991-2000_3000_final_embeddings.RData" )
-
-# load("hg1991-2000_3000_final_embeddings.RData")
-
-
-# embeddings = list()
-# embeddings$alpha = alpha_est
-# embeddings$F_mat = F_est
-# embeddings$Z_mat = Z_est
-# embeddings$selected_authors = selected_authors_index
-
-# name_authors = authors3000
-# final_embeddings$names = name_authors
-# top_200_by_count = 1:200
-# top_40_by_both = name_authors[union(1:42, which(alpha_est %in% sort(alpha_est, decreasing = TRUE)[1:40] ))]
-# top_40_by_both
-# embeddings$author_select = union(1:40, which(alpha_est %in% sort(alpha_est, decreasing = TRUE)[1:40] ))
-
-# top_200_by_alpha
-# top_five_indices = author_idx[which(author_orders[author_idx] %in% sort(author_orders[author_idx], 
-#                                                                        decreasing = TRUE)[1:5] )]
-
-# save(embeddings, file = "hg1991-2000_3000_embeddings.RData" )
-
-# dim(F_est)
-# dim(Z_est)
-
-# Theta_est = rep(1,m) %*% t(alpha_est) + F_est %*% t(Z_est)
-# Theta_est = Theta_est - rep(1,m) %*% t(alpha_est)
-
-# K0 = 6
-# Theta.svd = svds(Theta_est, k = K0)
-# plot(Theta.svd$d, lty = 1, xlab = "Index of singular value", ylab = "Singular value")
-# K2 = 6
-# sigmas = Theta.svd$d[1:K2]
-# u = Theta.svd$u[,1:K2]
-# v = Theta.svd$v[,1:K2]
-
-# collect the results in a list
-# HGres.summary = list()
-
-##### select the authors ##### 
-# selectAuthors = matrix(0, nrow = L, ncol = 5)
-# for (k in 1:L) {
-#   author_idx = which(label_kmeans == k)
-#   top_five_indices = author_idx[which(alpha_est %in% sort(alpha_est, decreasing = TRUE)[1:5] )]
-#   selectAuthors[k,] = author_names[final_auth_array][top_five_indices]
-# }
-# HGres.summary$selectAuthors = selectAuthors
-
-# selectAuthors_count = matrix(0, nrow = L, ncol = 5)
-# for (k in 1:L) {
-#   author_idx = which(label_kmeans == k)
-#   top_five_indices = author_idx[which(author_orders[author_idx] %in% sort(author_orders[author_idx], decreasing = TRUE)[1:5] )]
-#   selectAuthors_count[k,] = author_names[final_auth_array][top_five_indices[1:5]]
-# }
-# HGres.summary$selectAuthors_count = selectAuthors_count
-# HGres.summary$authorNames = author_names[final_auth_array]
-
-# ldy_paper_id = which(hypergraph[,39] != 0)
-# wlj_paper_id = which(hypergraph[,20] != 0)
-# joint_paper_id = intersect(ldy_paper_id, wlj_paper_id)
-# all_paper_id = 
-
-# ldy_paper_id =setdiff(ldy_paper_id, joint_paper_id)
-# wlj_paper_id =setdiff(wlj_paper_id, joint_paper_id)
-
-# F_em = final_embeddings$F_em
-# Z_em = final_embeddings$Z_em
-
-# Z_em = embeddings$Z_mat
-
-# plot(Z_em[c(20,39),1], Z_em[c(20,39),2] )
-# plot(F_em[ldy_paper_id,1], F_em[ldy_paper_id,2] )
-# plot(F_em[wlj_paper_id,1], F_em[wlj_paper_id,2] )
-
