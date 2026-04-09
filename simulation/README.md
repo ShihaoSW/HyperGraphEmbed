@@ -7,10 +7,12 @@
   Code to aggregate and evaluate the simulation results for Figures 2 and 3 of the paper.
 
 - **`coverage_result.R`**  
-  Code to reproduce the simulation inference results reported in Figures 4 and 5 of the paper.
+  Code to reproduce the simulation-based inference results reported in Figures 4 and 5 of the paper.
 
 - **`evaluate_coverage.R`**  
-  Code to plot the simulation inference results reported in Figures 4 and 5 of the paper. 
+  Code to plot the simulation-based inference results reported in Figures 4 and 5 of the paper.
 
 - **`functions_limit.R`**  
   Utility functions used in the analysis.
+
+We also report the expected runtimes here. For a single run with `m = n = 1500`, the runtime is about 68 seconds; for `m = n = 3000`, it is about 332 seconds.
