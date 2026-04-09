@@ -1,36 +1,16 @@
-## Data Resource
-
-The MADStat dataset is available at [ZhengTracyKe/MADStat](https://github.com/ZhengTracyKe/MADStat). If you use this data, please reference the repository and the paper: **"Co-citation and Co-authorship Networks of Statisticians"** ([Journal of Business & Economic Statistics](https://www.tandfonline.com/doi/full/10.1080/07350015.2021.1978469)).  
-
-In this repository, we make use of only a subset of the data from MADStat. For full details of the data, please see the [MADStat repository](https://github.com/ZhengTracyKe/MADStat).  
-
----
-
 ## Repository Files
 
-- **`AuPapMat.csv`**  
-  Matrix summarizing the BibTeX data.  
+- **`Theta_result.R`**  
+  Code to reproduce the simulation results in Figures 2 and 3 of the paper.
 
-- **`AuthorPaperInfo.RData`**  
-  R data object containing information of authors and papers.  
+- **`evaluate_Theta.R`**  
+  Code to aggregate and evaluate the simulation results for Figures 2 and 3 of the paper.
 
-- **`BibtexInfo.RData`**  
-  R data object with bibliographic information.  
+- **`coverage_result.R`**  
+  Code to reproduce the simulation inference results reported in Figures 4 and 5 of the paper.
 
-- **`PapPapMat.csv`**  
-  Matrix summarizing the citation data.  
-
-- **`author_name.txt`**  
-  Text file listing author names.  
+- **`evaluate_coverage.R`**  
+  Code to plot the simulation inference results reported in Figures 4 and 5 of the paper. 
 
 - **`functions_limit.R`**  
-  R script with utility functions used in the analyses.  
-
-- **`hg1991-2000_3000_final_embeddings.RData`**  
-  R data object containing the final hypergraph embeddings of 3,000 authors trained on papers published during 1991–2000.  
-
-- **`learn_the_crs.R`**  
-  R script for constructing confidence intervals and generating plots, including Figures 6-8 from the embeddings.  
-
-- **`learn_the_embeddings.R`**  
-  R script for learning embeddings from the hypergraph data.  
+  Utility functions used in the analysis.
