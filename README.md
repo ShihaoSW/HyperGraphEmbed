@@ -22,7 +22,7 @@ Code in this repository reproduces the results in
 
 - To reproduce Figures 6-8 in the co-citation hypergraph analysis in the paper, run `./cocitation_network_analysis/learn_the_embeddings.R` to generate the embeddings and use `./cocitation_network_analysis/learn_the_crs.R` to produce the plots.
 
-- To reproduce Figures 1-6 in the Supplmentary material, run `supp.R`.
+- To reproduce Figures 1-6 in the Supplmentary material, run `./simulation/supp.R`.
 
 **Author embedding plot from the co-citation hypergraph**:
 
