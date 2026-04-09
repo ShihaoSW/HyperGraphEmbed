@@ -32,7 +32,9 @@ Code in this repository reproduces the results in
 
 - To reproduce Figures 4 and 5 in the paper, first run `coverage_result.R` with seeds 1, ..., 1000 and save the results. Then aggregate the results using `evaluate_coverage.R`.
 
-- To reproduce the results in the co-citation hypergraph analysis in the paper, run `./cocitation_network/learn_the_embeddings.R` to generate the embeddings and use `./cocitation_network/learn_the_crs.R` to produce the plots.
+- To reproduce Figures 6-8 in the co-citation hypergraph analysis in the paper, run `./cocitation_network/learn_the_embeddings.R` to generate the embeddings and use `./cocitation_network/learn_the_crs.R` to produce the plots.
+
+- To reproduce Figures 1-6 in the Supplmentary material, run `supp.R`.
 
 **Author embedding plot from the co-citation hypergraph**:
 
