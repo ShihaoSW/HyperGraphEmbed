@@ -67,11 +67,7 @@ gen_data = function(m, n, K, beta, rho, trunc = 1, alpha_bound = 1){
   Theta = F_mat %*% t(Z_mat) + rep(1,m) %*% t(alpha_vals) - beta * rep(1,m) %*% t(rep(1,n))
   
   params = entry_recons(Theta, K)
-  
-  
-# Trim the Theta matrix, maybe not 
-  # Theta = trim_Theta(Theta, theta_low, theta_high)
-  
+
   # Probability matrix
   P = invlogit(Theta)
   
@@ -230,9 +226,6 @@ gen_graph_ori <- function(m, n, zc, betas, alphas = c(-1,1), covz, covf){
   
   Theta = F_mat %*% t(Z_mat) + rep(1,m) %*% t(alpha_vals) - betas * rep(1,m) %*% t(rep(1,n))
   
-  # Trim the Theta matrix, maybe not 
-  # Theta = trim_Theta(Theta, theta_low, theta_high)
-  
   # Probability matrix
   P = invlogit(Theta)
   
@@ -304,9 +297,6 @@ gen_graph <- function(m, n, zc, betas, covz, covf){
   
   Theta = F_mat %*% t(Z_mat) 
   
-  # Trim the Theta matrix, maybe not 
-  # Theta = trim_Theta(Theta, theta_low, theta_high)
-  
   # Probability matrix
   P = invlogit(Theta)
   
@@ -372,140 +362,6 @@ usvd <- function(V, K, low_p, up_p){
 } 
 
 ##### Searching for the estimator #####
-# gd_F <- function(V, F0, Z, eta, alpha, maxiter = 1000, eps = 1e-7){
-#   
-#  F_new = F0
-#  K = dim(F0)[2]
-#  m = dim(F0)[1]
-#  n = dim(Z)[1]
-#  count = 0
-#  while (TRUE) {
-#    count = count + 1
-#    F_old = F_new
-#    Theta = F_old %*% t(Z)
-#    gd = (V - invlogit(Theta)) %*% Z  
-#    step_size = eta
-#    while ( Log_likelihood(V, F_old, Z) >= Log_likelihood(V, F_old + step_size * gd, Z) ) {
-#      step_size = step_size * alpha
-#      if (step_size <= 1e-7){break}
-#    }
-#    F_new = F_old + step_size * gd
-#    cat(count, ":", Log_likelihood(V, F_new, Z), "Learning rate:", step_size, "Gap:",Fnorm(F_new - F_old), "\n" )
-#    if( Fnorm(F_new - F_old) <= (sqrt(m*K)*eps)){break}
-#    if( abs(Log_likelihood(V, F_old, Z) - Log_likelihood(V, F_new, Z)) /abs(Log_likelihood(V, F0, Z) ) <= eps){break}
-#    if( Log_likelihood(V, F_old, Z) >= Log_likelihood(V, F_new, Z)  )
-#    {F_new = F_old 
-#    break}
-#    if( count > maxiter ){break}
-#  }
-#  return(F_new)
-#  
-# }
-
-# gd_Z <- function(V, Z0, Fac, eta, alpha, maxiter = 100, eps = 1e-7){
-#  
-#  Z_new = Z0
-#  K = dim(Z0)[2]
-#  n = dim(Z0)[1]
-#  m = dim(Fac)[1]
-#  count = 0
-#  while (TRUE) {
-#    count = count + 1
-#    Z_old = Z_new
-#    Theta = Fac %*% t(Z_old)
-#    gd_new = t(V - invlogit(Theta)) %*% Fac  
-#    step_size = eta
-#    while ( Log_likelihood(V, Fac, Z_old) >= Log_likelihood(V, Fac, Z_old + step_size * gd) ) {
-#      step_size = step_size * alpha
-#      if (step_size <= 1e-7){break}
-#    }
-#    Z_new = Z_old + step_size * gd
-#    cat(count, ":", Log_likelihood(V, Fac, Z_new), "Learning rate:", step_size, "Gap:",Fnorm(Z_new - Z_old), "\n" )
-#    if( Fnorm(Z_new - Z_old) <= (sqrt(n*K)*eps)){break}
-#    if( abs(Log_likelihood(V, Fac, Z_old) - Log_likelihood(V, Fac, Z_new)) /abs(Log_likelihood(V, Fac, Z0) ) <= eps){break}
-#    if( Log_likelihood(V, Fac, Z_old) >= Log_likelihood(V, Fac, Z_new)  )
-#    {Z_new = Z_old 
-#    break}
-#    if( count > maxiter ){break}
-#  }
-#  return(Z_new)
-#   
-# }
-
-
-##### AM algorithm #####
-
-# am_gd <- function(V, F0, Z0, eps2, maxiter = 100, eta = 100, alpha = 0.5){
-#  
-#  ## Alternating maximization for factor models, using gradient descent 
-#  ## Input: V: the hyperedges
-#  ##        F0: initial values for factors
-#  ##        Z0: initial values for loadings
-#  ##        eps1: convergence threshold for the Newton step
-#  ##        eps2: convergence threshold for the AM
-#  ##        maxiter: maximum number of iteration in AM
-#  ##        eta: start step size in gradient descent
-#  ##        alpha: learning rate in gradient descent
-#  
-#  m = dim(V)[1]
-#  n = dim(V)[2]
-#  K = dim(F0)[2]
-#  
-#  F_old = F0
-#  Z_old = Z0
-#  
-#  # first iteration
-#  # upadte F
-#  F_new = gd_F(V, F_old, Z_old, eta, alpha)
-#  for (i in 1:m) {
-#     F_new[i,] = trim_vec(F_new[i,], low = -30, up = 30 )
-#   }
-#   
-#   # upadte Z
-#   Z_new = gd_Z(V, Z_old, F_new, eta, alpha)
-#   for (j in 1:n) {
-#     Z_new[j,] = trim_vec(Z_new[j,], low = -30, up = 30 )
-#   }
-#   
-#   # alternating maximization
-#   count = 0
-#   max_likelihood = Log_likelihood(V, F0 = F_new, Z0 = Z_new )
-#   F_final = F_new
-#   Z_final = Z_new
-#   while (TRUE) {
-#     count = count + 1
-#     cat(count,'\n')
-#     F_old = F_new
-#     Z_old = Z_new
-#    
-#     # upadte F
-#     F_new = gd_F(V, F_old, Z_old, eta, alpha)
-#     for (i in 1:m) {
-#       F_new[i,] = trim_vec(F_new[i,], low = -20, up = 20 )
-#     }
-#    
-#     # upadte Z
-#     Z_new = gd_Z(V, Z_old, F_new, eta, alpha)
-#     for (j in 1:n) {
-#       Z_new[j,] = trim_vec(Z_new[j,], low = -20, up = 20 )
-#     }
-#     
-#     if (Log_likelihood(V,F_new,Z_new) == -Inf ){break}
-#     cat(Log_likelihood(V,F_new,Z_new), '\n')
-#     if (Log_likelihood(V,F_new,Z_new) > max_likelihood ){
-#       max_likelihood = Log_likelihood(V,F_new,Z_new)
-#       F_final = F_new
-#       Z_final = Z_new
-#     }
-#     
-#     cat("Final likelihood: ",  Log_likelihood(V, F_final, Z_final), '\n')
-#     if (abs(Log_likelihood(V,F_new,Z_new) - Log_likelihood(V,F_old,Z_old)) <= eps2){break}
-#     if (count > maxiter){break}
-#   }
-#   
-#   return(list(niter = count, Factors = F_final, Loadings = Z_final))
-# } 
-
 am_pga <- function(Y, F0, Z0, alpha0, eta = 1, nT = 100){
   ## Projected gradient ascent for embedding models 
   ## Input: Y: the hyperedges
