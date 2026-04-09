@@ -30,7 +30,7 @@ In this repository, we make use of only a subset of the data from MADStat. For f
   R data object containing the final hypergraph embeddings of 3,000 authors trained on papers published during 1991–2000.  
 
 - **`learn_the_crs.R`**  
-  R script for constructing confidence intervals and generating plots from the embeddings.  
+  R script for constructing confidence intervals and generating plots, including Figures 6-8 from the embeddings.  
 
 - **`learn_the_embeddings.R`**  
   R script for learning embeddings from the hypergraph data.  
