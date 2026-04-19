@@ -1,5 +1,3 @@
-# beta = 0
-
 coverage_result = data.frame(coverage = rep(0,(400+800+1500+3000+6000)* 5 + 400 + 
                                               800 + 1500 + 3000+ 6000), 
                              length = rep(0,(400+800+1500+3000+6000)* 5 + 400 + 
@@ -31,11 +29,6 @@ p_coverage_result$n = factor(p_coverage_result$n, levels =c("n = 400","n = 800",
 p_coverage_result$sparsity = factor(p_coverage_result$sparsity, levels = c('0','-1') )
 
 head(coverage_result)
-
-# library(ggplot2)
-# p <- ggplot(coverage_result, aes(x=target, y=coverage)) + 
-#   geom_boxplot()
-# p
 
 target_cov = 0.95
 
@@ -241,13 +234,6 @@ p <- ggplot(coverage_result, aes(x=target, y=length, fill = n)) +
   guides(fill = guide_legend(title = "Num. of vertices"))
 p
 
-# p <- ggplot(p_coverage_result, aes(x=sparsity, y=coverage, fill = n)) + 
-#   geom_boxplot() + theme_classic() + xlab("") + ylab("Interval length") +
-#   theme(legend.position="none") +scale_fill_brewer(palette="Blues")  + ggtitle("Interval length") +
-#   theme(plot.title = element_text(hjust = 0.5)) +
-#   guides(fill = guide_legend(title = "Num. of vertices"))
-# p
-
 ###### beta = -1 ####
 
 coverage_result = data.frame(coverage = rep(0,(400+800+1500+3000+6000)* 5 + 400 + 
@@ -271,18 +257,10 @@ coverage_result$target = factor(coverage_result$target, levels =c("alpha", "Z", 
 coverage_result$n = factor(coverage_result$n, levels =c("n = 400","n = 800","n = 1500","n = 3000","n = 6000") )
 
 
-# head(coverage_result)
-# 
-# p <- ggplot(coverage_result, aes(x=target, y=coverage)) + 
-#   geom_boxplot()
-# p
-
 target_cov = 0.95
 
 n_list = c(400,800,1500,3000,6000)
 
-
-# setdiff(1:1000, suc)
 
 
 for (repp in 1:1000) {
@@ -469,8 +447,6 @@ for (repp in 1:1000) {
 coverage_result$coverage = coverage_result$coverage / 1000
 coverage_result$length = coverage_result$length / 1000 * 2
 
-# coverage_result$coverage[11701:23400] = coverage_result$coverage[11701:23400] * 1000
-# coverage_result$length[11701:23400] = coverage_result$length[11701:23400] * 1000 * 2
 
 p <- ggplot(coverage_result, aes(x=target, y=coverage, fill = n)) + 
   geom_boxplot() + theme_classic() + xlab("Coverage target") + ylab("Coverage") +
