@@ -507,14 +507,3 @@ p <- ggplot(p_coverage_result, aes(x=sparsity, y=length, fill = n)) +
   guides(fill = guide_legend(title = "Empirical coverage"))
 p
 
-
-
-# p <- ggplot(coverage_result, aes(x=target, y=length, fill = n)) + 
-#   geom_boxplot() + theme_classic() + xlab("Coverage target") + ylab("Interval length") +
-#   theme(legend.position="top") +scale_fill_brewer(palette="Blues")  + ggtitle("Interval length") +
-#   theme(plot.title = element_text(hjust = 0.5)) +
-#   guides(fill = guide_legend(title = "Num. of vertices")) + 
-#   theme(legend.title=element_text(size=30), 
-#         legend.text=element_text(size=30),
-#         legend.key.size = unit(3, 'cm'))
-# p
