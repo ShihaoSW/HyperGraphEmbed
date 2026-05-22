@@ -15,7 +15,7 @@
 - **`functions_limit.R`**  
   Utility functions used in the analysis.
   
-- **`supp.R`**
+- **`supp.R`**  
   Code to reproduce Figures 1-6 of the supplementary material.
 
 We also report some expected runtimes here. For a single run with `m = n = 1500`, the runtime is about 68 seconds; for `m = n = 3000`, it is about 332 seconds.
